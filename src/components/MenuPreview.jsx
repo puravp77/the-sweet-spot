@@ -15,7 +15,6 @@ function MenuPreview() {
       title: "Chocolate Truffle Cake",
       description: "Rich, moist & layered with premium dark chocolate ganache.",
       badge: "Signature",
-      price: "₹899",
       tags: ["Best Seller", "Dark Cocoa"],
     },
     {
@@ -23,7 +22,6 @@ function MenuPreview() {
       title: "Mascarpone Cheesecake",
       description: "Creamy, smooth & delicately balanced with a buttery base.",
       badge: "Chef Pick",
-      price: "₹799",
       tags: ["Velvety", "Classic"],
     },
     {
@@ -31,7 +29,6 @@ function MenuPreview() {
       title: "Fudge Brownies",
       description: "Dense, gooey & handcrafted with high-quality cocoa.",
       badge: "New",
-      price: "₹499",
       tags: ["Gooey", "Box of 6"],
     },
   ];
@@ -62,10 +59,6 @@ function MenuPreview() {
             <div className="absolute left-4 top-4 z-10 rounded-full bg-white/80 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-dark/70 shadow-[0_6px_14px_rgba(0,0,0,0.12)]">
               {item.badge}
             </div>
-            <div className="absolute right-4 top-4 z-10 rounded-full bg-dark/90 px-3 py-1 text-[11px] font-semibold text-white shadow-[0_6px_14px_rgba(0,0,0,0.18)]">
-              {item.price}
-            </div>
-
             <img
               src={item.image}
               alt={item.title}
@@ -91,14 +84,14 @@ function MenuPreview() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
                 <a
                   href={buildWhatsAppLink(item.title, item.image)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center text-sm font-semibold tracking-wide text-white bg-dark px-6 py-2.5 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.22)] transition duration-300"
+                  className="inline-flex w-full sm:flex-1 sm:max-w-[180px] h-11 items-center justify-center text-[13px] font-semibold tracking-[0.08em] uppercase text-white bg-dark rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.22)] transition duration-300"
                 >
-                  Order on WhatsApp
+                  Place Order
                 </a>
                 <a
                   href={`https://wa.me/+919913125551?text=${encodeURIComponent(
@@ -106,8 +99,9 @@ function MenuPreview() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center text-sm font-semibold tracking-wide text-dark border border-dark/40 bg-white/70 backdrop-blur-sm px-6 py-2.5 rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.12)] hover:bg-dark hover:text-white hover:border-dark transition duration-300"
+                  className="relative inline-flex w-full sm:flex-1 sm:max-w-[180px] h-11 items-center justify-center text-[13px] font-semibold tracking-[0.08em] uppercase text-dark rounded-full border border-dark/20 bg-white/70 backdrop-blur-sm shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:bg-dark hover:text-white hover:border-dark"
                 >
+                  <span className="absolute inset-[2px] rounded-full border border-gold/30"></span>
                   Customize
                 </a>
               </div>

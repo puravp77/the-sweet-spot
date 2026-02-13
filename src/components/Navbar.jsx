@@ -9,16 +9,11 @@ function Navbar() {
     <nav className="w-full bg-cream px-4 py-3 sm:px-6 md:px-10 sm:py-4">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="relative">
-            <div className="absolute -inset-1 rounded-full bg-[conic-gradient(from_120deg,rgba(191,161,129,0.55),rgba(255,255,255,0.9),rgba(191,161,129,0.55))] blur-[2px]"></div>
-            <div className="relative rounded-full p-[2px] bg-white/80 shadow-[0_10px_20px_rgba(0,0,0,0.18)]">
-              <img
-                src={logo}
-                alt="The Sweet Spot"
-                className="h-12 w-12 sm:h-16 sm:w-16 md:h-18 md:w-18 rounded-full object-cover"
-              />
-            </div>
-          </div>
+          <img
+            src={logo}
+            alt="The Sweet Spot"
+            className="h-12 w-12 sm:h-16 sm:w-16 md:h-18 md:w-18 rounded-full object-cover"
+          />
         </div>
 
         <span className="absolute left-1/2 -translate-x-1/2 font-heading text-sm sm:text-lg md:text-xl tracking-[0.2em] whitespace-nowrap">
