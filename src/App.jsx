@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import MenuPreview from "./components/MenuPreview";
 import FloatingWhatsApp from "./components/FloatingWhatsApp"; 
+import FullMenu from "./components/FullMenu";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Hero />
       <MenuPreview />
       <FloatingWhatsApp />
+      <FullMenu />
 
 
     </div>

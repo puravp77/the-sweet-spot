@@ -3,17 +3,17 @@ import cake1 from "../assets/cake1.jpg";
 
 function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center min-h-[85vh] px-6 pt-20 pb-16 sm:pt-24 sm:pb-20">
+    <section className="relative z-0 flex flex-col items-center justify-center text-center min-h-[85vh] px-6 pt-20 pb-16 sm:pt-24 sm:pb-20">
 
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-center bg-cover opacity-70"
+        className="absolute inset-0 bg-center bg-cover opacity-70 pointer-events-none"
         style={{ backgroundImage: `url(${cakeBg})` }}
       ></div>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.85),rgba(248,240,228,0.78),rgba(237,226,208,0.9))]"></div>
-      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gold/15 blur-3xl"></div>
-      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-dark/10 blur-3xl"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.85),rgba(248,240,228,0.78),rgba(237,226,208,0.9))] pointer-events-none"></div>
+      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gold/15 blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-dark/10 blur-3xl pointer-events-none"></div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-5xl">
