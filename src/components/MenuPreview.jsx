@@ -62,7 +62,7 @@ function MenuPreview() {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-48 sm:h-56 md:h-72 object-cover object-center transition duration-500 group-hover:scale-[1.04]"
+              className="w-full h-72 sm:h-60 md:h-72 object-cover object-center transition duration-500 group-hover:scale-[1.04]"
             />
 
             <div className="p-5 sm:p-6 text-center relative">

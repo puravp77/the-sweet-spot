@@ -3,7 +3,7 @@ import cake1 from "../assets/cake1.jpg";
 
 function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center min-h-[85vh] px-6 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center text-center min-h-[85vh] px-6 pt-20 pb-16 sm:pt-24 sm:pb-20">
 
       {/* Background Image */}
       <div
@@ -85,14 +85,14 @@ function Hero() {
                 <p className="mt-2 text-sm text-gray-600">
                   Velvet layers, rich ganache, and a soft cocoa finish.
                 </p>
-                <div className="mt-4 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-dark/70">
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 text-[11px] uppercase tracking-[0.18em] text-dark/70">
                     <span className="h-2 w-2 rounded-full bg-gold"></span>
                     Bestseller
                   </div>
-                  <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-dark">
+                  <div className="inline-flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white bg-dark px-4 py-2 rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.16)]">
                     Order Now
-                    <span className="text-base leading-none">→</span>
+                    <span className="text-sm leading-none">→</span>
                   </div>
                 </div>
               </div>
