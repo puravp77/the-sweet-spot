@@ -19,11 +19,18 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
         },
+        sweep: {
+          "0%": { opacity: "0", transform: "translateX(-60%)" },
+          "30%": { opacity: "0.35" },
+          "60%": { opacity: "0.2" },
+          "100%": { opacity: "0", transform: "translateX(60%)" },
+        },
       },
       animation: {
         "fade-up": "fadeUp 700ms ease-out both",
         "fade-in": "fadeIn 800ms ease-out both",
         float: "float 4s ease-in-out infinite",
+        sweep: "sweep 6s ease-in-out infinite",
       },
       colors: {
         cream: "#F6F1EB",
