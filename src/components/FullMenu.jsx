@@ -164,9 +164,6 @@ function FullMenu() {
         {menu.map((category, index) => (
           <div key={index} className="mb-16">
             <div className="flex flex-col items-center gap-3 mb-8 text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/70 px-4 py-1 text-[10px] uppercase tracking-[0.3em] text-dark/60 shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                Category
-              </span>
               <h3 className="font-heading text-3xl text-dark tracking-[0.08em]">
                 {category.title}
               </h3>
@@ -201,13 +198,17 @@ function FullMenu() {
                     </p>
 
                     <div className="mt-4 flex flex-wrap gap-2 text-[12px] uppercase tracking-[0.16em] text-dark/70">
-                      {item.price ? null : (
+                      {item.price ? (
+                        <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                          Pack Rs. {item.price}
+                        </span>
+                      ) : (
                         <>
                           <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
-                            500g
+                            500g Rs. {item.half}
                           </span>
                           <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
-                            1kg
+                            1kg Rs. {item.one}
                           </span>
                         </>
                       )}
