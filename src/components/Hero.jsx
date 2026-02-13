@@ -19,11 +19,18 @@ function Hero() {
       <div className="relative z-10 w-full max-w-5xl">
         <div className="flex flex-col items-center md:flex-row md:items-center md:justify-between gap-10">
           <div className="text-center md:text-left md:max-w-xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/60 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/80 shadow-[0_8px_16px_rgba(0,0,0,0.08)] animate-fade-in">
+            <span
+              className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/60 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/80 shadow-[0_8px_16px_rgba(0,0,0,0.08)]"
+              data-aos="fade-up"
+            >
           Freshly Baked Daily
             </span>
 
-            <h2 className="mt-5 font-heading text-[2.7rem] sm:text-5xl md:text-6xl leading-[1.02] mb-5 tracking-[0.02em] text-dark drop-shadow-[0_10px_24px_rgba(0,0,0,0.14)] animate-fade-up">
+            <h2
+              className="mt-5 font-heading text-[2.7rem] sm:text-5xl md:text-6xl leading-[1.02] mb-5 tracking-[0.02em] text-dark drop-shadow-[0_10px_24px_rgba(0,0,0,0.14)]"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               Handcrafted{" "}
               <span className="bg-gradient-to-r from-dark via-gold to-dark bg-clip-text text-transparent">
                 Desserts
@@ -32,14 +39,26 @@ function Hero() {
               for Your <span className="italic">Sweetest</span> Moments.
             </h2>
 
-            <p className="text-gray-700 max-w-2xl mx-auto md:mx-0 mb-8 text-sm md:text-base leading-relaxed animate-fade-up [animation-delay:120ms]">
+            <p
+              className="text-gray-700 max-w-2xl mx-auto md:mx-0 mb-8 text-sm md:text-base leading-relaxed"
+              data-aos="fade-up"
+              data-aos-delay="160"
+            >
               Freshly baked with love using premium ingredients. <br />
               Delivery & takeaway available.
             </p>
 
-            <div className="mx-auto md:mx-0 h-px w-24 bg-dark/15 mb-8 animate-fade-in [animation-delay:180ms]"></div>
+            <div
+              className="mx-auto md:mx-0 h-px w-24 bg-dark/15 mb-8"
+              data-aos="fade-up"
+              data-aos-delay="220"
+            ></div>
 
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 animate-fade-up [animation-delay:220ms]">
+            <div
+              className="flex flex-wrap justify-center md:justify-start gap-4"
+              data-aos="fade-up"
+              data-aos-delay="260"
+            >
               <a
                 href="https://wa.me/+919913125551"
                 target="_blank"
@@ -61,7 +80,11 @@ function Hero() {
             </div>
           </div>
 
-          <div className="relative w-64 sm:w-72 md:w-80 animate-fade-up [animation-delay:260ms]">
+          <div
+            className="relative w-64 sm:w-72 md:w-80"
+            data-aos="fade-up"
+            data-aos-delay="320"
+          >
             <div className="absolute -inset-6 rounded-[32px] bg-white/60 blur-2xl"></div>
             <div className="relative overflow-hidden rounded-[28px] border border-dark/10 bg-white/80 backdrop-blur shadow-[0_22px_40px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_48px_rgba(0,0,0,0.28)]">
               <div className="absolute -inset-px rounded-[28px] border border-gold/30 pointer-events-none"></div>

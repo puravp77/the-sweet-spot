@@ -36,13 +36,24 @@ function MenuPreview() {
   return (
     <section id="menu" className="bg-beige px-4 py-16 sm:px-6 sm:py-20">
       <div className="text-center mb-10 sm:mb-14">
-        <span className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/70 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/70 shadow-[0_8px_16px_rgba(0,0,0,0.08)] animate-fade-in">
+        <span
+          className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/70 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/70 shadow-[0_8px_16px_rgba(0,0,0,0.08)]"
+          data-aos="fade-up"
+        >
           Curated Menu
         </span>
-        <h3 className="mt-4 font-heading text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 text-dark animate-fade-up">
+        <h3
+          className="mt-4 font-heading text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 text-dark"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Our Signature Collection
         </h3>
-        <p className="text-gray-600 text-sm sm:text-base max-w-xl mx-auto animate-fade-up [animation-delay:120ms]">
+        <p
+          className="text-gray-600 text-sm sm:text-base max-w-xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="180"
+        >
           A curated selection of our most loved creations.
         </p>
       </div>
@@ -51,8 +62,9 @@ function MenuPreview() {
         {items.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-cream rounded-3xl overflow-hidden border border-dark/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-2 animate-fade-up"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="group relative bg-cream rounded-3xl overflow-hidden border border-dark/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-2"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
           >
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/40 via-transparent to-dark/5"></div>
 
