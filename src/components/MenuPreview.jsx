@@ -28,18 +28,17 @@ function MenuPreview() {
   ];
 
   return (
-    <section id="menu" className="py-20 px-6 bg-beige">
-      
-      <div className="text-center mb-14">
-        <h3 className="font-heading text-3xl md:text-4xl mb-4">
+    <section id="menu" className="bg-beige px-4 py-14 sm:px-6 sm:py-20">
+      <div className="text-center mb-10 sm:mb-14">
+        <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4">
           Our Signature Collection
         </h3>
-        <p className="text-gray-600 text-sm md:text-base">
+        <p className="text-gray-600 text-sm sm:text-base max-w-xl mx-auto">
           A curated selection of our most loved creations.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
         {items.map((item, index) => (
           <div
             key={index}
@@ -50,14 +49,14 @@ function MenuPreview() {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-72 object-cover object-center transition duration-500 group-hover:scale-[1.04]"
+              className="w-full h-48 sm:h-56 md:h-72 object-cover object-center transition duration-500 group-hover:scale-[1.04]"
             />
 
-            <div className="p-6 text-center relative">
-              <h4 className="font-heading text-xl mb-2">
+            <div className="p-5 sm:p-6 text-center relative">
+              <h4 className="font-heading text-lg sm:text-xl mb-2">
                 {item.title}
               </h4>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 text-sm sm:text-[15px] mb-4">
                 {item.description}
               </p>
 
@@ -65,7 +64,7 @@ function MenuPreview() {
                 href={buildWhatsAppLink(item.title, item.image)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center text-sm border border-dark px-5 py-2.5 rounded-full hover:bg-dark hover:text-white transition duration-300"
+                className="inline-flex w-full sm:w-auto items-center justify-center text-sm border border-dark px-5 py-2.5 rounded-full hover:bg-dark hover:text-white transition duration-300"
               >
                 Order on WhatsApp
               </a>
@@ -73,7 +72,6 @@ function MenuPreview() {
           </div>
         ))}
       </div>
-
     </section>
   );
 }
