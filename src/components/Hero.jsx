@@ -17,7 +17,7 @@ function Hero() {
       <div className="relative z-10">
         <h2 className="font-heading text-4xl md:text-6xl leading-[1.1] mb-6 tracking-wide">
           Handcrafted Desserts <br />
-          for Your Sweetest Moments
+          for Your Sweetest Moments.
         </h2>
 
         <p className="text-gray-600 max-w-xl mx-auto mb-10 text-sm md:text-base leading-relaxed">

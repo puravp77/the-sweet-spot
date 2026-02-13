@@ -7,17 +7,21 @@ function Navbar() {
 
   return (
     <nav className="w-full bg-cream px-4 py-4 sm:px-6 md:px-10 sm:py-6">
-      <div className="flex items-center justify-between">
+      <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
           <img
             src={logo}
             alt="The Sweet Spot"
-            className="h-10 sm:h-14 md:h-16 w-auto object-contain object-left"
+            className="h-12 sm:h-16 md:h-20 w-auto object-contain object-left"
           />
-          <span className="font-heading text-base sm:text-xl md:text-2xl tracking-[0.22em]">
+          <span className="hidden sm:inline font-heading text-base sm:text-xl md:text-2xl tracking-[0.22em]">
             THE SWEET SPOT
           </span>
         </div>
+
+        <span className="sm:hidden absolute left-1/2 -translate-x-1/2 font-heading text-base tracking-[0.22em]">
+          THE SWEET SPOT
+        </span>
 
         <div className="hidden sm:flex items-center gap-6">
           <a
@@ -42,7 +46,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => setIsOpen((open) => !open)}
-          className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-dark/30 hover:border-dark hover:bg-dark hover:text-white transition duration-300"
+          className="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border-0 hover:bg-dark hover:text-white transition duration-300"
           aria-expanded={isOpen}
           aria-label="Toggle navigation menu"
         >
