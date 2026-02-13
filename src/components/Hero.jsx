@@ -1,5 +1,5 @@
 import cakeBg from "../assets/cake-bg.jpg";
-import cake1 from "../assets/cake1.jpg";
+import cake3d from "../assets/3D-cake.jpg";
 
 function Hero() {
   return (
@@ -62,29 +62,12 @@ function Hero() {
           </div>
 
           <div className="relative w-64 sm:w-72 md:w-80 animate-fade-up [animation-delay:260ms]">
-            <div className="absolute -inset-6 rounded-[32px] bg-white/60 blur-2xl"></div>
-            <div className="relative overflow-hidden rounded-[28px] border border-dark/10 bg-white/70 backdrop-blur shadow-[0_22px_40px_rgba(0,0,0,0.22)] animate-float">
-              <img
-                src={cake1}
-                alt="Signature Chocolate Truffle Cake"
-                className="h-48 sm:h-56 w-full object-cover"
-              />
-              <div className="p-5 text-left">
-                <p className="text-xs uppercase tracking-[0.24em] text-dark/60">
-                  Featured
-                </p>
-                <h3 className="mt-2 font-heading text-lg text-dark">
-                  Chocolate Truffle Cake
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Velvet layers, rich ganache, and a soft cocoa finish.
-                </p>
-                <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-dark">
-                  Order Now
-                  <span className="text-base leading-none">→</span>
-                </div>
-              </div>
-            </div>
+            <div className="absolute -inset-6 rounded-full bg-white/50 blur-2xl"></div>
+            <img
+              src={cake3d}
+              alt="3D Chocolate Truffle Cake"
+              className="relative w-full h-auto rounded-[24px] object-contain drop-shadow-[0_24px_36px_rgba(0,0,0,0.28)] animate-float"
+            />
           </div>
         </div>
       </div>
