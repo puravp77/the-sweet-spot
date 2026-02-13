@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import MenuPreview from "./components/MenuPreview";
+import FloatingWhatsApp from "./components/FloatingWhatsApp"; 
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <Navbar />
       <Hero />
       <MenuPreview />
+      <FloatingWhatsApp />
+
 
     </div>
   );
