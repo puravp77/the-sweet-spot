@@ -27,7 +27,7 @@ function Hero() {
 
         <div className="flex justify-center gap-4">
           <a
-            href="https://wa.me/91XXXXXXXXXX"
+            href="https://wa.me/+919106618331"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-dark text-white px-7 py-3 rounded-full text-sm hover:bg-softBrown transition duration-300"
