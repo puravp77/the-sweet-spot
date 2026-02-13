@@ -21,7 +21,7 @@ function Hero() {
         </h2>
 
         <p className="text-gray-600 max-w-xl mx-auto mb-10 text-sm md:text-base leading-relaxed">
-          Freshly baked with love using premium ingredients.
+          Freshly baked with love using premium ingredients. <br></br>
           Delivery & takeaway available.
         </p>
 

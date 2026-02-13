@@ -1,12 +1,20 @@
 import { FaInstagram } from "react-icons/fa";
+import logo from "../assets/Logo.png";
 
 function Navbar() {
   return (
-    <nav className="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-cream">
+    <nav className="w-full flex justify-between items-center px-4 md:px-10 py-6 bg-cream">
       
-      <h1 className="font-heading text-xl md:text-2xl tracking-wider">
-        THE SWEET SPOT
-      </h1>
+      <div className="flex items-center gap-3">
+        <img
+          src={logo}
+          alt="The Sweet Spot"
+          className="h-14 md:h-16 w-auto object-contain object-left"
+        />
+        <span className="font-heading text-xl md:text-2xl tracking-wider">
+          THE SWEET SPOT
+        </span>
+      </div>
 
       <div className="flex items-center gap-6">
         <a
