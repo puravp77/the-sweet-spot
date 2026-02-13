@@ -6,6 +6,25 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(18px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+      },
+      animation: {
+        "fade-up": "fadeUp 700ms ease-out both",
+        "fade-in": "fadeIn 800ms ease-out both",
+        float: "float 4s ease-in-out infinite",
+      },
       colors: {
         cream: "#F6F1EB",
         beige: "#E8DED2",

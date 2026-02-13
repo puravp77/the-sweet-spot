@@ -6,20 +6,22 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-cream px-4 py-4 sm:px-6 md:px-10 sm:py-6">
+    <nav className="w-full bg-cream px-4 py-3 sm:px-6 md:px-10 sm:py-4">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
-          <img
-            src={logo}
-            alt="The Sweet Spot"
-            className="h-12 sm:h-16 md:h-20 w-auto object-contain object-left"
-          />
-          <span className="hidden sm:inline font-heading text-base sm:text-xl md:text-2xl tracking-[0.22em]">
-            THE SWEET SPOT
-          </span>
+          <div className="relative">
+            <div className="absolute -inset-1 rounded-full bg-[conic-gradient(from_120deg,rgba(191,161,129,0.55),rgba(255,255,255,0.9),rgba(191,161,129,0.55))] blur-[2px]"></div>
+            <div className="relative rounded-full p-[2px] bg-white/80 shadow-[0_10px_20px_rgba(0,0,0,0.18)]">
+              <img
+                src={logo}
+                alt="The Sweet Spot"
+                className="h-12 w-12 sm:h-16 sm:w-16 md:h-18 md:w-18 rounded-full object-cover"
+              />
+            </div>
+          </div>
         </div>
 
-        <span className="sm:hidden absolute left-1/2 -translate-x-1/2 font-heading text-base tracking-[0.22em]">
+        <span className="absolute left-1/2 -translate-x-1/2 font-heading text-sm sm:text-lg md:text-xl tracking-[0.2em] whitespace-nowrap">
           THE SWEET SPOT
         </span>
 
@@ -80,7 +82,7 @@ function Navbar() {
             href="https://www.instagram.com/__.thesweetspot._/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-dark/20 hover:border-dark hover:bg-dark hover:text-white transition duration-300"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full border-0 hover:bg-dark hover:text-white transition duration-300"
           >
             <FaInstagram className="text-lg" />
           </a>
