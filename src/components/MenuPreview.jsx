@@ -3,6 +3,12 @@ import cake1 from "../assets/cake1.jpg";
 import cake2 from "../assets/cake2.jpg";
 
 function MenuPreview() {
+  const buildWhatsAppLink = (title, imageUrl) => {
+    const fullImageUrl = new URL(imageUrl, window.location.origin).href;
+    const message = `Hi, I want to order ${title}. Image: ${fullImageUrl}`;
+    return `https://wa.me/+919913125551?text=${encodeURIComponent(message)}`;
+  };
+
   const items = [
     {
       image: cake1,
@@ -56,7 +62,7 @@ function MenuPreview() {
               </p>
 
               <a
-                href={`https://wa.me/+919913125551?text=Hi, I want to order ${item.title}`}
+                href={buildWhatsAppLink(item.title, item.image)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center text-sm border border-dark px-5 py-2.5 rounded-full hover:bg-dark hover:text-white transition duration-300"
