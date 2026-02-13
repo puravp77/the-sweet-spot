@@ -27,7 +27,7 @@ function Navbar() {
         </a>
 
         <a
-          href="https://wa.me/91XXXXXXXXXX"
+          href="https://wa.me/+919913125551"
           target="_blank"
           rel="noopener noreferrer"
           className="border border-dark px-5 py-2 rounded-full text-sm hover:bg-dark hover:text-white transition duration-300"

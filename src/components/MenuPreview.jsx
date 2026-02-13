@@ -56,7 +56,7 @@ function MenuPreview() {
               </p>
 
               <a
-                href={`https://wa.me/91XXXXXXXXXX?text=Hi, I want to order ${item.title}`}
+                href={`https://wa.me/+919913125551?text=Hi, I want to order ${item.title}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center text-sm border border-dark px-5 py-2.5 rounded-full hover:bg-dark hover:text-white transition duration-300"
