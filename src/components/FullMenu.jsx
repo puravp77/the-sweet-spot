@@ -1,3 +1,4 @@
+import { useState } from "react";
 import cake1 from "../assets/Cake-1.jpg";
 import cake2 from "../assets/Cake-2.jpg";
 import cake3 from "../assets/Cake-3.jpg";
@@ -6,6 +7,32 @@ import cake5 from "../assets/Cake-5.jpg";
 import cake6 from "../assets/Cake-6.jpg";
 
 function FullMenu() {
+  const [activeItem, setActiveItem] = useState(null);
+
+  const handleOrderNow = (item) => {
+    if (item.price) {
+      const message = `Hi, I want to order ${item.name}.`;
+      window.open(
+        `https://wa.me/919913125551?text=${encodeURIComponent(message)}`,
+        "_blank"
+      );
+      return;
+    }
+    setActiveItem(item);
+  };
+
+  const handleSizeSelect = (size) => {
+    if (!activeItem) {
+      return;
+    }
+    const message = `Hi, I want to order ${activeItem.name} ${size}.`;
+    window.open(
+      `https://wa.me/919913125551?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+    setActiveItem(null);
+  };
+
   const menu = [
     {
       title: "Classic Cakes",
@@ -212,7 +239,7 @@ function FullMenu() {
                       </div>
                     </div>
                   )}
-                  <div className="p-5">
+                  <div className="flex h-full flex-col p-5">
                     <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-dark/50">
                       <span className="h-1.5 w-1.5 rounded-full bg-gold/70"></span>
                       {category.title}
@@ -220,25 +247,32 @@ function FullMenu() {
                     <h4 className="mt-2 font-heading text-lg text-dark">
                       {item.name}
                     </h4>
-                    <p className="mt-2 text-sm text-gray-600">
+                    <p className="mt-2 text-sm text-gray-600 min-h-[48px]">
                       {item.description}
                     </p>
-                    <div className="mt-4 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.18em] text-dark/70">
+                    <div className="mt-4 grid grid-cols-2 gap-2 text-[11px] uppercase tracking-[0.18em] text-dark/70">
                       {item.price ? (
-                        <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                        <span className="col-span-2 rounded-full border border-dark/10 bg-cream px-3 py-1 text-center">
                           Rs. {item.price}
                         </span>
                       ) : (
                         <>
-                          <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                          <span className="rounded-full border border-dark/10 bg-cream px-3 py-1 text-center">
                             500g Rs. {item.half}
                           </span>
-                          <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                          <span className="rounded-full border border-dark/10 bg-cream px-3 py-1 text-center">
                             1kg Rs. {item.one}
                           </span>
                         </>
                       )}
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => handleOrderNow(item)}
+                      className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-dark px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_18px_rgba(0,0,0,0.2)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_22px_rgba(0,0,0,0.24)]"
+                    >
+                      Order Now
+                    </button>
                   </div>
                 </div>
               ))}
@@ -246,6 +280,46 @@ function FullMenu() {
           </div>
         ))}
       </div>
+
+      {activeItem ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
+          <div className="w-full max-w-sm rounded-3xl border border-dark/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.24)] backdrop-blur">
+            <div className="text-center">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-dark/60">
+                Select Size
+              </p>
+              <h3 className="mt-2 font-heading text-xl text-dark">
+                {activeItem.name}
+              </h3>
+            </div>
+            <div className="mt-6 grid gap-3">
+              <button
+                type="button"
+                onClick={() => handleSizeSelect("500g")}
+                className="inline-flex w-full items-center justify-between rounded-full border border-dark/10 bg-cream px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-dark transition duration-300 hover:bg-dark hover:text-white"
+              >
+                <span>500g</span>
+                <span>Order Now →</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSizeSelect("1kg")}
+                className="inline-flex w-full items-center justify-between rounded-full border border-dark/10 bg-cream px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-dark transition duration-300 hover:bg-dark hover:text-white"
+              >
+                <span>1kg</span>
+                <span>Order Now →</span>
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={() => setActiveItem(null)}
+              className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-dark/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-dark/70 transition duration-300 hover:bg-dark hover:text-white"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true, easing: "ease-out" });
+    AOS.init({ duration: 800, once: false, easing: "ease-out" });
   }, []);
 
   return (
