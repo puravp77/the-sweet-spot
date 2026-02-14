@@ -1,4 +1,4 @@
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+﻿import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/Logo.png";
 
 function Footer() {
@@ -56,7 +56,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/60">
-          � {new Date().getFullYear()} The Sweet Spot. All rights reserved.
+          © {new Date().getFullYear()} The Sweet Spot. All rights reserved.
         </div>
       </div>
     </footer>
@@ -64,3 +64,4 @@ function Footer() {
 }
 
 export default Footer;
+

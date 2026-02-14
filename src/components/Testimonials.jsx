@@ -1,4 +1,4 @@
-import { FaStar } from "react-icons/fa";
+Ôªøimport { FaStar } from "react-icons/fa";
 
 function Testimonials() {
   const testimonials = [
@@ -45,7 +45,7 @@ function Testimonials() {
                 ))}
               </div>
               <p className="text-sm leading-relaxed text-gray-700 sm:text-base">
-                ì{t.quote}î
+                ‚Äú{t.quote}‚Äù
               </p>
               <p className="mt-4 text-sm font-semibold text-dark">{t.name}</p>
             </div>
@@ -57,3 +57,4 @@ function Testimonials() {
 }
 
 export default Testimonials;
+
