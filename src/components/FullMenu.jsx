@@ -1,41 +1,55 @@
+import cake1 from "../assets/Cake-1.jpg";
+import cake2 from "../assets/Cake-2.jpg";
+import cake3 from "../assets/Cake-3.jpg";
+import cake4 from "../assets/Cake-4.jpg";
+import cake5 from "../assets/Cake-5.jpg";
+import cake6 from "../assets/Cake-6.jpg";
+
 function FullMenu() {
   const menu = [
     {
       title: "Classic Cakes",
+      description: "Freshly handcrafted desserts. Customisation available.",
       items: [
         {
           name: "Blackforest",
           description: "Chocolate layers with cherries and whipped cream.",
+          image: cake1,
           half: 700,
           one: 1200,
         },
         {
           name: "Coffee Mocha",
           description: "Coffee-soaked sponge with mocha cream and cocoa.",
+          image: cake2,
           half: 750,
           one: 1300,
         },
         {
           name: "Choco Nutella",
           description: "Rich chocolate cake with Nutella frosting.",
+          image: cake3,
           half: 800,
           one: 1400,
         },
         {
           name: "Choco Mousse",
           description: "Silky chocolate mousse layered in soft sponge.",
+          image: cake4,
           half: 800,
           one: 1400,
         },
         {
           name: "Signature Chocolate Fudge",
           description: "Deep cocoa cake with warm fudge finish.",
+          image: cake5,
           half: 700,
           one: 1200,
         },
         {
           name: "Cookies & Cream (Oreo)",
           description: "Oreo crumble, cream filling, chocolate sponge.",
+          image: cake6,
           half: 750,
           one: 1300,
         },
@@ -79,6 +93,7 @@ function FullMenu() {
     },
     {
       title: "Cheesecakes",
+      description: "Silky, creamy, and topped with artisan sauces.",
       items: [
         {
           name: "Blueberry",
@@ -126,6 +141,7 @@ function FullMenu() {
     },
     {
       title: "Special Treats",
+      description: "Bite-sized indulgences perfect for gifting and sharing.",
       items: [
         {
           name: "Korean Cream Cheese Buns (2)",
@@ -147,63 +163,58 @@ function FullMenu() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-cream">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/70 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/70 shadow-[0_8px_16px_rgba(0,0,0,0.08)]"
-            data-aos="fade-up"
-          >
+    <section id="menu" className="bg-cream py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center" data-aos="fade-up">
+          <span className="inline-flex items-center rounded-full border border-dark/10 bg-white/70 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/70 shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
             Full Menu
           </span>
-          <h2
-            className="mt-4 font-heading text-4xl mb-4 text-dark"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <h2 className="mt-5 font-heading text-4xl text-dark">
             Explore Our Menu
           </h2>
-          <p
-            className="text-gray-600"
-            data-aos="fade-up"
-            data-aos-delay="180"
-          >
+          <p className="mt-2 text-sm text-gray-600">
             Freshly handcrafted desserts. Customisation available.
           </p>
         </div>
 
-        {menu.map((category, index) => (
-          <div key={index} className="mb-16">
-            <div className="flex flex-col items-center gap-3 mb-8 text-center">
-              <h3
-                className="font-heading text-3xl text-dark tracking-[0.08em]"
-                data-aos="fade-up"
-              >
+        {menu.map((category) => (
+          <div key={category.title} className="mt-16">
+            <div className="text-center" data-aos="fade-up">
+              <h3 className="font-heading text-3xl text-dark">
                 {category.title}
               </h3>
-              <div className="h-px w-20 bg-gold/60"></div>
+              <p className="mt-2 text-sm text-gray-600">
+                {category.description}
+              </p>
+              <div className="mx-auto mt-3 h-px w-20 bg-gold/60"></div>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {category.items.map((item, i) => (
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {category.items.map((item) => (
                 <div
-                  key={i}
-                  className="group overflow-hidden rounded-3xl border border-dark/10 bg-white/80 shadow-[0_14px_28px_rgba(0,0,0,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_34px_rgba(0,0,0,0.18)]"
+                  key={item.name}
+                  className="overflow-hidden rounded-3xl border border-dark/10 bg-white/80 shadow-[0_14px_28px_rgba(0,0,0,0.12)]"
                   data-aos="fade-up"
-                  data-aos-delay={i * 80}
                 >
-                  <div className="relative h-44 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),rgba(237,226,208,0.9))]">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-xs uppercase tracking-[0.26em] text-dark/50">
-                      Image
-                      <span className="mt-1 text-[10px] tracking-[0.18em] text-dark/40">
-                        Coming Soon
-                      </span>
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="h-[28rem] w-full object-cover sm:h-[28rem]"
+                    />
+                  ) : (
+                    <div className="flex h-[28rem] items-center justify-center bg-[#efe5d7] text-[11px] uppercase tracking-[0.26em] text-dark/40 sm:h-[28rem]">
+                      <div className="text-center">
+                        Image
+                        <div className="mt-1 text-[10px] tracking-[0.2em] text-dark/35">
+                          Coming Soon
+                        </div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="p-5 text-sm md:text-base">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-dark/60">
-                      <span className="h-1.5 w-1.5 rounded-full bg-gold/80"></span>
+                  )}
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-dark/50">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gold/70"></span>
                       {category.title}
                     </div>
                     <h4 className="mt-2 font-heading text-lg text-dark">
@@ -212,59 +223,19 @@ function FullMenu() {
                     <p className="mt-2 text-sm text-gray-600">
                       {item.description}
                     </p>
-
-                    <div className="mt-4 grid gap-2">
+                    <div className="mt-4 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.18em] text-dark/70">
                       {item.price ? (
-                        <div className="flex items-center justify-between rounded-2xl border border-dark/10 bg-cream px-4 py-2 text-[12px] uppercase tracking-[0.16em] text-dark/80 shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                          <div className="flex items-center gap-4">
-                            <span className="font-semibold text-dark">₹{item.price}</span>
-                            <span>Pack</span>
-                          </div>
-                          <a
-                            href={`https://wa.me/919913125551?text=${encodeURIComponent(
-                              `Hi, I want to enquire about ${item.name}. Price: Rs. ${item.price}`
-                            )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center rounded-full border border-dark/40 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-dark transition duration-300 hover:bg-dark hover:text-white"
-                          >
-                            Enquire
-                          </a>
-                        </div>
+                        <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                          Rs. {item.price}
+                        </span>
                       ) : (
                         <>
-                          <div className="flex items-center justify-between rounded-2xl border border-dark/10 bg-cream px-4 py-2 text-[12px] uppercase tracking-[0.16em] text-dark/80 shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                          <div className="flex items-center gap-4">
-                            <span className="font-semibold text-dark">₹{item.half}</span>
-                            <span>500g</span>
-                          </div>
-                            <a
-                              href={`https://wa.me/919913125551?text=${encodeURIComponent(
-                                `Hi, I want to enquire about ${item.name} (500g). Price: Rs. ${item.half}`
-                              )}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center rounded-full border border-dark/40 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-dark transition duration-300 hover:bg-dark hover:text-white"
-                            >
-                              Enquire
-                            </a>
-                          </div>
-                          <div className="flex items-center justify-between rounded-2xl border border-dark/10 bg-cream px-4 py-2 text-[12px] uppercase tracking-[0.16em] text-dark/80 shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                          <div className="flex items-center gap-4">
-                            <span className="font-semibold text-dark">₹{item.one}</span>
-                            <span>1kg</span>
-                          </div>
-                            <a
-                              href={`https://wa.me/919913125551?text=${encodeURIComponent(
-                                `Hi, I want to enquire about ${item.name} (1kg). Price: Rs. ${item.one}`
-                              )}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center rounded-full border border-dark/40 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-dark transition duration-300 hover:bg-dark hover:text-white"
-                            >
-                              Enquire
-                            </a>
-                          </div>
+                          <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                            500g Rs. {item.half}
+                          </span>
+                          <span className="rounded-full border border-dark/10 bg-cream px-3 py-1">
+                            1kg Rs. {item.one}
+                          </span>
                         </>
                       )}
                     </div>
@@ -274,21 +245,6 @@ function FullMenu() {
             </div>
           </div>
         ))}
-
-        <div className="text-center mt-10">
-          <p className="text-sm text-gray-600 mb-4">
-            Extra charges applicable for customisation.
-          </p>
-
-          <a
-            href="https://wa.me/919913125551?text=Hi, I would like to place an order."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-dark px-8 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white shadow-[0_12px_24px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_28px_rgba(0,0,0,0.24)]"
-          >
-            Order on WhatsApp
-          </a>
-        </div>
       </div>
     </section>
   );
