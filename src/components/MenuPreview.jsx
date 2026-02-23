@@ -4,8 +4,10 @@ import cake2 from "../assets/cake2.jpg";
 
 function MenuPreview() {
   const buildWhatsAppLink = (title, imageUrl) => {
-    const fullImageUrl = new URL(imageUrl, window.location.origin).href;
-    const message = `Hi, I want to order ${title}. Image: ${fullImageUrl}`;
+    // We use the production URL because WhatsApp cannot see 'localhost' images during testing
+    const productionOrigin = "https://puravp77.github.io";
+    const fullImageUrl = new URL(imageUrl, productionOrigin).href;
+    const message = `Hi, I want to order ${title}.\n\nImage: ${fullImageUrl}`;
     return `https://wa.me/+919913125551?text=${encodeURIComponent(message)}`;
   };
 

@@ -11,7 +11,9 @@ function FullMenu() {
 
   const handleOrderNow = (item) => {
     if (item.price) {
-      const message = `Hi, I want to order ${item.name}.`;
+      const productionOrigin = "https://puravp77.github.io";
+      const fullImageUrl = item.image ? new URL(item.image, productionOrigin).href : "";
+      const message = `Hi, I want to order ${item.name}.${fullImageUrl ? `\n\nImage: ${fullImageUrl}` : ""}`;
       window.open(
         `https://wa.me/919913125551?text=${encodeURIComponent(message)}`,
         "_blank"
@@ -25,7 +27,9 @@ function FullMenu() {
     if (!activeItem) {
       return;
     }
-    const message = `Hi, I want to order ${activeItem.name} ${size}.`;
+    const productionOrigin = "https://puravp77.github.io";
+    const fullImageUrl = activeItem.image ? new URL(activeItem.image, productionOrigin).href : "";
+    const message = `Hi, I want to order ${activeItem.name} ${size}.${fullImageUrl ? `\n\nImage: ${fullImageUrl}` : ""}`;
     window.open(
       `https://wa.me/919913125551?text=${encodeURIComponent(message)}`,
       "_blank"

@@ -17,8 +17,14 @@ function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface pt-32 pb-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32 pb-24">
+      {/* Subtle Cake Background */}
+      <div
+        className="absolute inset-0 bg-center bg-cover opacity-70 pointer-events-none"
+        style={{ backgroundImage: `url(${heroCake})` }}
+      ></div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white"></div>
 
       {/* Clean White Background */}
 

@@ -3,7 +3,7 @@ import logo from "../assets/Logo.png";
 
 function Footer() {
   return (
-    <footer className="relative bg-primary text-surface overflow-hidden">
+    <footer className="relative bg-black text-surface overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-black/20 z-0"></div>
 
       <div className="relative mx-auto max-w-6xl px-6 py-16 z-10">
@@ -36,7 +36,7 @@ function Footer() {
               </p>
               <p className="text-sm text-surface/80 flex items-center gap-3 leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent/60 shrink-0"></span>
-                21, Sunset Avenue, Ahmedabad, India
+                Surat, Gujarat, India 
               </p>
             </div>
           </div>
