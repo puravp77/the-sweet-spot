@@ -1,12 +1,8 @@
 import heroCake from "../assets/cake-bg.jpg";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Magnetic from "./Magnetic";
 
 function Hero() {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
-  const scale = useTransform(scrollY, [0, 1000], [1, 1.15]);
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -22,19 +18,9 @@ function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface pt-32 pb-24">
-      <motion.div
-        className="absolute inset-0 bg-center bg-cover opacity-15 mix-blend-multiply"
-        style={{ backgroundImage: `url(${heroCake})`, y: y1, scale }}
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-      ></motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/60 to-surface"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white"></div>
 
-      {/* Animated Blobs */}
-      <div className="absolute top-10 -right-20 h-[30rem] w-[30rem] rounded-full bg-accent/15 blur-3xl animate-blob"></div>
-      <div className="absolute -bottom-32 -left-32 h-[35rem] w-[35rem] rounded-full bg-rose/20 blur-3xl animate-blob" style={{ animationDelay: "2s" }}></div>
-      <div className="absolute top-1/2 left-1/4 h-[25rem] w-[25rem] -translate-y-1/2 rounded-full bg-primary/5 blur-3xl animate-blob" style={{ animationDelay: "4s" }}></div>
+      {/* Clean White Background */}
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:gap-16 w-full z-10">
         <motion.div

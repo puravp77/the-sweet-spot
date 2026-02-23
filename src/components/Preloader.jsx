@@ -17,7 +17,7 @@ function Preloader() {
 
     return (
         <motion.div
-            className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-surface"
+            className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-white"
             initial={{ y: 0 }}
             animate={{ y: "-100%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 1.5 }}

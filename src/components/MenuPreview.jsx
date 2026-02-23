@@ -34,9 +34,8 @@ function MenuPreview() {
   ];
 
   return (
-    <section id="menu" className="relative bg-surface px-4 py-32 sm:px-6 sm:py-40 overflow-hidden">
-      {/* Background aesthetics */}
-      <div className="absolute top-40 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+    <section id="menu" className="relative bg-white px-4 py-32 sm:px-6 sm:py-40 overflow-hidden">
+      {/* Pure White Background */}
 
       <div className="relative text-center mb-20 sm:mb-24">
         <span
@@ -66,7 +65,7 @@ function MenuPreview() {
         {items.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white/60 backdrop-blur-md rounded-[2rem] overflow-hidden border border-white/50 shadow-[0_15px_35px_rgba(44,30,22,0.06)] hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] transition-all duration-700 hover:-translate-y-4"
+            className="group relative bg-white rounded-[2.5rem] overflow-hidden border border-primary/5 shadow-[0_15px_35px_rgba(44,30,22,0.06)] hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] transition-all duration-700 hover:-translate-y-4"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >

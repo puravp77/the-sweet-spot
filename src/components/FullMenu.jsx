@@ -190,8 +190,8 @@ function FullMenu() {
   ];
 
   return (
-    <section id="full-menu" className="relative py-32 sm:py-40 bg-surface">
-      <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
+    <section id="full-menu" className="relative py-32 sm:py-40 bg-white">
+      {/* Pure White Background */}
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="text-center" data-aos="fade-up">
@@ -227,7 +227,7 @@ function FullMenu() {
               {category.items.map((item) => (
                 <div
                   key={item.name}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 backdrop-blur-md shadow-[0_15px_35px_rgba(44,30,22,0.06)] transition-all duration-700 hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] hover:-translate-y-3 hover:bg-white/60"
+                  className="group relative overflow-hidden rounded-[2.5rem] border border-primary/5 bg-white shadow-[0_15px_35px_rgba(44,30,22,0.06)] transition-all duration-700 hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] hover:-translate-y-3 hover:bg-white"
                   data-aos="fade-up"
                 >
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/40 via-transparent to-primary/5 z-0"></div>

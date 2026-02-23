@@ -7,7 +7,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-primary/10 px-4 py-3 sm:px-6 md:px-10 sm:py-4 z-50 transition-all duration-300">
+    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-primary/10 px-4 py-3 sm:px-6 md:px-10 sm:py-4 z-50 transition-all duration-300">
       <div className="relative flex items-center justify-between h-14">
         <div className="flex items-center gap-2 sm:gap-3">
           <img

@@ -17,10 +17,8 @@ function About() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-surface py-32 sm:py-40 border-y border-primary/5">
-      <div className="absolute top-0 right-0 h-[40rem] w-[40rem] rounded-full bg-surface-dark/50 blur-[100px] pointer-events-none"></div>
-      <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-accent/15 blur-3xl animate-blob"></div>
-      <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-rose/15 blur-3xl animate-blob" style={{ animationDelay: "3s" }}></div>
+    <section className="relative overflow-hidden bg-white py-32 sm:py-40 border-y border-primary/5">
+      {/* Pure White Background */}
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:gap-20">
         <div className="w-full md:w-[45%]" data-aos="fade-up">

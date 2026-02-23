@@ -20,10 +20,10 @@ function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="relative overflow-hidden py-32 sm:py-40 bg-surface">
+    <section id="testimonials" className="relative overflow-hidden py-32 sm:py-40 bg-white">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[40rem] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Pure White Background */}
 
       <div className="relative mx-auto max-w-6xl px-6 z-10">
         <div className="text-center" data-aos="fade-up">
@@ -43,7 +43,7 @@ function Testimonials() {
           {testimonials.map((t, idx) => (
             <div
               key={t.name}
-              className="group relative rounded-[2rem] border border-white/50 bg-white/60 backdrop-blur-md p-8 shadow-[0_15px_35px_rgba(44,30,22,0.06)] transition-all duration-500 hover:-translate-y-2 hover:bg-white/90 hover:shadow-[0_20px_40px_rgba(44,30,22,0.1)]"
+              className="group relative rounded-[2.5rem] border border-primary/5 bg-white p-8 shadow-[0_15px_35px_rgba(44,30,22,0.06)] transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_20px_40px_rgba(44,30,22,0.1)]"
               data-aos="fade-up"
               data-aos-delay={idx * 120}
             >

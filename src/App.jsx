@@ -13,9 +13,27 @@ import FloatingBackToTop from "./components/FloatingBackToTop";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
 
+import Lenis from "lenis";
+
 function App() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: false, easing: "ease-out" });
+    // Initialize Smooth Scroll
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    AOS.init({
+      duration: 800,
+      once: true, // Only animate once to save resources
+      easing: "ease-out"
+    });
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (
