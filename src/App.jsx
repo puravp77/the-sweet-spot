@@ -18,18 +18,18 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-cream min-h-screen text-dark font-body">
+    <div className="bg-surface min-h-screen text-primary font-body">
       <Navbar />
       <Hero />
-      <div className="h-px bg-dark/10"></div>
+      <div className="h-px bg-primary/10"></div>
       <About />
-      <div className="h-px bg-dark/10"></div>
+      <div className="h-px bg-primary/10"></div>
       <MenuPreview />
-      <div className="h-px bg-dark/10"></div>
+      <div className="h-px bg-primary/10"></div>
       <FullMenu />
-      <div className="h-px bg-dark/10"></div>
+      <div className="h-px bg-primary/10"></div>
       <Testimonials />
-      <div className="h-px bg-dark/10"></div>
+      <div className="h-px bg-primary/10"></div>
       <Footer />
       <FloatingWhatsApp />
       <FloatingBackToTop />

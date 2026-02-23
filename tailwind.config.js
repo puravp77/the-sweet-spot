@@ -25,23 +25,43 @@ export default {
           "60%": { opacity: "0.2" },
           "100%": { opacity: "0", transform: "translateX(60%)" },
         },
+        blob: {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+          "100%": { transform: "translate(0px, 0px) scale(1)" },
+        },
       },
       animation: {
-        "fade-up": "fadeUp 700ms ease-out both",
+        "fade-up": "fadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both",
         "fade-in": "fadeIn 800ms ease-out both",
         float: "float 4s ease-in-out infinite",
         sweep: "sweep 6s ease-in-out infinite",
+        blob: "blob 10s infinite",
       },
       colors: {
-        cream: "#F6F1EB",
-        beige: "#E8DED2",
-        gold: "#BFA181",
-        dark: "#111111",
-        softBrown: "#8D6E63",
+        accent: {
+          DEFAULT: "#D4AF37", // Metallic Gold
+          light: "#F3E5AB", // Vanilla
+          dark: "#AA8C2C", // Dark Gold
+        },
+        primary: {
+          DEFAULT: "#2C1E16", // Deep Espresso
+          light: "#4A3628", // Coffee
+        },
+        surface: {
+          DEFAULT: "#FAECE1", // Cream/Almond background
+          light: "#FFFDF9", // Off-white
+          dark: "#E8DED2", // Darker beige
+        },
+        rose: {
+          DEFAULT: "#D8A7B1", // Soft rose pink
+          light: "#EFD3D7",
+        }
       },
       fontFamily: {
-        heading: ['"Playfair Display"', "serif"],
-        body: ["Poppins", "sans-serif"],
+        heading: ['"Cormorant Garamond"', "serif"],
+        body: ["Outfit", "sans-serif"],
       },
     },
   },
