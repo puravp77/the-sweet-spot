@@ -1,6 +1,7 @@
 import brownies from "../assets/brownies.jpg";
 import cake1 from "../assets/cake1.jpg";
 import cake2 from "../assets/cake2.jpg";
+import toast from "react-hot-toast";
 
 function MenuPreview() {
   const buildWhatsAppLink = (title, imageUrl) => {
@@ -112,6 +113,14 @@ function MenuPreview() {
                   href={buildWhatsAppLink(item.title, item.image)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => toast.success(`Redirecting to WhatsApp for ${item.title}!`, {
+                    icon: '🚀',
+                    style: {
+                      borderRadius: '10px',
+                      background: '#2C1E16',
+                      color: '#fff',
+                    },
+                  })}
                   className="group/btn relative inline-flex w-full sm:flex-1 h-12 items-center justify-center overflow-hidden rounded-full bg-primary text-[12px] font-medium tracking-[0.1em] uppercase text-surface shadow-[0_10px_20px_rgba(44,30,22,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_25px_rgba(44,30,22,0.25)]"
                 >
                   <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-150%)] group-hover/btn:duration-700 group-hover/btn:[transform:skew(-12deg)_translateX(150%)]">
@@ -125,6 +134,14 @@ function MenuPreview() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => toast.success("Let's customize your dessert!", {
+                    icon: '🎨',
+                    style: {
+                      borderRadius: '10px',
+                      background: '#2C1E16',
+                      color: '#fff',
+                    },
+                  })}
                   className="relative inline-flex w-full sm:flex-1 h-12 items-center justify-center text-[12px] font-medium tracking-[0.1em] uppercase text-primary rounded-full border border-primary/20 bg-transparent transition-all duration-300 hover:bg-primary/5 hover:border-primary"
                 >
                   Customize

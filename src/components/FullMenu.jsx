@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
+import toast from "react-hot-toast";
 import cake1 from "../assets/Cake-1.jpg";
 import cake2 from "../assets/Cake-2.jpg";
 import cake3 from "../assets/Cake-3.jpg";
@@ -14,12 +16,33 @@ function FullMenu() {
       const productionOrigin = "https://puravp77.github.io";
       const fullImageUrl = item.image ? new URL(item.image, productionOrigin).href : "";
       const message = `Hi, I want to order ${item.name}.${fullImageUrl ? `\n\nImage: ${fullImageUrl}` : ""}`;
+
+      toast.success(`Redirecting to WhatsApp for your ${item.name}!`, {
+        icon: '🧁',
+        style: {
+          borderRadius: '10px',
+          background: '#2C1E16',
+          color: '#fff',
+        },
+      });
+
       window.open(
         `https://wa.me/919913125551?text=${encodeURIComponent(message)}`,
         "_blank"
       );
       return;
     }
+
+    // Add guidance toast for cake sizes
+    toast('Excellent choice! Please select your preferred size.', {
+      icon: '🍰',
+      duration: 3000,
+      style: {
+        borderRadius: '10px',
+        background: '#2C1E16',
+        color: '#fff',
+      },
+    });
     setActiveItem(item);
   };
 
@@ -30,6 +53,16 @@ function FullMenu() {
     const productionOrigin = "https://puravp77.github.io";
     const fullImageUrl = activeItem.image ? new URL(activeItem.image, productionOrigin).href : "";
     const message = `Hi, I want to order ${activeItem.name} ${size}.${fullImageUrl ? `\n\nImage: ${fullImageUrl}` : ""}`;
+
+    toast.success(`Opening WhatsApp for your ${activeItem.name}!`, {
+      icon: '🎂',
+      style: {
+        borderRadius: '10px',
+        background: '#2C1E16',
+        color: '#fff',
+      },
+    });
+
     window.open(
       `https://wa.me/919913125551?text=${encodeURIComponent(message)}`,
       "_blank"
@@ -290,7 +323,6 @@ function FullMenu() {
                     </div>
 
                     <button
-                      type="button"
                       onClick={() => handleOrderNow(item)}
                       className="mt-6 inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-primary px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-surface shadow-[0_10px_20px_rgba(44,30,22,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_30px_rgba(44,30,22,0.25)] relative group/btn"
                     >
@@ -307,10 +339,10 @@ function FullMenu() {
         ))}
       </div>
 
-      {/* Modal Overlay Upgrade */}
-      {activeItem ? (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-primary/40 px-4 backdrop-blur-sm transition-all duration-300">
-          <div className="w-full max-w-md rounded-[2.5rem] border border-white/50 bg-white/95 p-8 shadow-[0_25px_50px_rgba(44,30,22,0.25)] relative transform transition-all scale-100 opacity-100">
+      {/* Modal Overlay Upgrade with Portal FIX */}
+      {activeItem && createPortal(
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/60 px-4 backdrop-blur-md">
+          <div className="w-full max-w-md rounded-[2.5rem] bg-white p-8 shadow-[0_25px_50px_rgba(0,0,0,0.3)] relative">
             <div className="absolute inset-0 pointer-events-none rounded-[2.5rem] bg-gradient-to-tr from-primary/5 to-transparent"></div>
 
             <div className="text-center relative z-10">
@@ -350,8 +382,9 @@ function FullMenu() {
               Cancel
             </button>
           </div>
-        </div>
-      ) : null}
+        </div>,
+        document.body
+      )}
     </section>
   );
 }

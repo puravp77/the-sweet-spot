@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { FaInstagram } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/Logo.png";
 import Magnetic from "./Magnetic";
 
@@ -38,6 +39,14 @@ function Navbar() {
               href="https://wa.me/+919913125551"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => toast.success("Opening WhatsApp for your order!", {
+                icon: '🛍️',
+                style: {
+                  borderRadius: '10px',
+                  background: '#2C1E16',
+                  color: '#fff',
+                },
+              })}
               className="group relative overflow-hidden border border-primary/20 bg-transparent px-6 py-2.5 rounded-full text-sm font-medium tracking-wide text-primary transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(44,30,22,0.1)] inline-block"
             >
               <span className="relative z-10 transition-colors duration-300 group-hover:text-surface-light">Order Now</span>
@@ -55,26 +64,26 @@ function Navbar() {
         >
           <span className="flex flex-col gap-1.5">
             <span
-              className={`block h-[2px] w-5 bg-current transition-transform duration-300 origin-center ${isOpen ? "translate-y-[8px] rotate-45" : ""
-                }`}
+              className={`block h - [2px] w - 5 bg - current transition - transform duration - 300 origin - center ${isOpen ? "translate-y-[8px] rotate-45" : ""
+                } `}
             />
             <span
-              className={`block h-[2px] w-5 bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"
-                }`}
+              className={`block h - [2px] w - 5 bg - current transition - opacity duration - 300 ${isOpen ? "opacity-0" : "opacity-100"
+                } `}
             />
             <span
-              className={`block h-[2px] w-5 bg-current transition-transform duration-300 origin-center ${isOpen ? "-translate-y-[8px] -rotate-45" : ""
-                }`}
+              className={`block h - [2px] w - 5 bg - current transition - transform duration - 300 origin - center ${isOpen ? "-translate-y-[8px] -rotate-45" : ""
+                } `}
             />
           </span>
         </button>
       </div>
 
       <div
-        className={`sm:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen
+        className={`sm:hidden overflow - hidden transition - all duration - 500 ease -in -out ${isOpen
           ? "max-h-56 opacity-100 mt-4"
           : "max-h-0 opacity-0 mt-0"
-          }`}
+          } `}
       >
         <div className="rounded-2xl border border-primary/10 bg-white/90 backdrop-blur-lg px-5 py-5 shadow-xl transform transition-transform duration-500 origin-top">
           <div className="flex flex-col items-center gap-4">

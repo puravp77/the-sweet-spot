@@ -1,62 +1,76 @@
+import { useEffect, useRef } from "react";
 import heroCake from "../assets/cake-bg.jpg";
-import { motion } from "framer-motion";
+import { gsap } from "gsap";
 import Magnetic from "./Magnetic";
 
 function Hero() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 2.2 }
-    }
-  };
+  const bgRef = useRef(null);
+  const contentRef = useRef(null);
 
-  const itemAnim = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-  };
+  useEffect(() => {
+    // Parallax background
+    gsap.to(bgRef.current, {
+      yPercent: 30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "section",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    // Reveal animation for text
+    const ctx = gsap.context(() => {
+      gsap.from(".reveal-text", {
+        y: 100,
+        opacity: 0,
+        rotate: 3,
+        stagger: 0.1,
+        duration: 1.2,
+        ease: "power4.out",
+        delay: 2.2 // Wait for preloader
+      });
+    }, contentRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32 pb-24">
-      {/* Subtle Cake Background */}
+      {/* Subtle Cake Background with GSAP Parallax */}
       <div
-        className="absolute inset-0 bg-center bg-cover opacity-70 pointer-events-none"
+        ref={bgRef}
+        className="absolute inset-x-0 -top-[20%] h-[140%] bg-center bg-cover opacity-70 pointer-events-none"
         style={{ backgroundImage: `url(${heroCake})` }}
       ></div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white"></div>
 
-      {/* Clean White Background */}
-
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:gap-16 w-full z-10">
-        <motion.div
-          className="w-full md:max-w-xl text-center md:text-left"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          <motion.div variants={itemAnim} className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/60 backdrop-blur-sm px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.25em] text-primary/80 shadow-sm mb-6">
+      <div ref={contentRef} className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:gap-16 w-full z-10">
+        <div className="w-full md:max-w-xl text-center md:text-left">
+          <div className="reveal-text inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/60 backdrop-blur-sm px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.25em] text-primary/80 shadow-sm mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
             Freshly Baked Daily
-          </motion.div>
+          </div>
 
           <div className="overflow-hidden mb-2">
-            <motion.h1 variants={itemAnim} className="font-heading text-[3.2rem] leading-[1.1] text-primary sm:text-6xl md:text-[4.5rem] tracking-tight">
+            <h1 className="reveal-text font-heading text-[3.2rem] leading-[1.1] text-primary sm:text-6xl md:text-[4.5rem] tracking-tight">
               Handcrafted <span className="text-accent italic font-light">Desserts</span>
-            </motion.h1>
+            </h1>
           </div>
           <div className="overflow-hidden">
-            <motion.h1 variants={itemAnim} className="font-heading text-[3.2rem] leading-[1.1] text-primary sm:text-6xl md:text-[4.5rem] tracking-tight">
+            <h1 className="reveal-text font-heading text-[3.2rem] leading-[1.1] text-primary sm:text-6xl md:text-[4.5rem] tracking-tight">
               for Your Sweetest Moments.
-            </motion.h1>
+            </h1>
           </div>
 
-          <motion.p variants={itemAnim} className="mt-6 text-base leading-relaxed text-primary/70 sm:text-lg max-w-md mx-auto md:mx-0 font-light">
+          <p className="reveal-text mt-6 text-base leading-relaxed text-primary/70 sm:text-lg max-w-md mx-auto md:mx-0 font-light">
             Premium ingredients, exquisite flavors, and artisanal finishes carefully curated for
             every celebration.
-          </motion.p>
+          </p>
 
-          <motion.div variants={itemAnim} className="mt-12 flex flex-wrap justify-center md:justify-start gap-5">
+          <div className="reveal-text mt-12 flex flex-wrap justify-center md:justify-start gap-5">
             <Magnetic>
               <a
                 href="https://wa.me/919913125551"
@@ -82,11 +96,22 @@ function Hero() {
                 <span className="pointer-events-none">View Menu</span>
               </a>
             </Magnetic>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <div className="relative w-full md:w-[46%] hidden md:block" data-aos="fade-in" data-aos-delay="300">
-          {/* Placeholder for interactive 3d element or hero image if desired */}
+        <div className="relative w-full md:w-[46%] hidden md:block">
+          {/* Animated decorative SVG */}
+          <div className="relative w-full aspect-square flex items-center justify-center">
+            <svg viewBox="0 0 200 200" className="w-full max-w-[400px]">
+              <path
+                className="animate-draw opacity-30"
+                d="M10,100 C10,40 40,10 100,10 C160,10 190,40 190,100 C190,160 160,190 100,190 C40,190 10,160 10,100"
+                fill="transparent"
+                stroke="#D4AF37"
+                strokeWidth="0.5"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </section>
