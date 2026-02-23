@@ -34,76 +34,89 @@ function MenuPreview() {
   ];
 
   return (
-    <section id="menu" className="bg-beige px-4 py-16 sm:px-6 sm:py-20">
-      <div className="text-center mb-10 sm:mb-14">
+    <section id="menu" className="relative bg-surface px-4 py-24 sm:px-6 sm:py-28 overflow-hidden">
+      {/* Background aesthetics */}
+      <div className="absolute top-40 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+
+      <div className="relative text-center mb-16 sm:mb-20">
         <span
-          className="inline-flex items-center gap-2 rounded-full border border-dark/10 bg-white/70 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-dark/70 shadow-[0_8px_16px_rgba(0,0,0,0.08)]"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/60 backdrop-blur-sm px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.25em] text-primary/80 shadow-sm"
           data-aos="fade-up"
         >
+          <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
           Curated Menu
         </span>
         <h3
-          className="mt-4 font-heading text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 text-dark"
+          className="mt-6 font-heading text-4xl sm:text-5xl md:text-5xl mb-4 sm:mb-6 text-primary tracking-tight"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          Our Signature Collection
+          Our Signature <span className="italic font-light">Collection</span>
         </h3>
         <p
-          className="text-gray-600 text-sm sm:text-base max-w-xl mx-auto"
+          className="text-primary/70 text-base sm:text-lg max-w-xl mx-auto font-light"
           data-aos="fade-up"
           data-aos-delay="180"
         >
-          A curated selection of our most loved creations.
+          A curated selection of our most loved artisanal creations.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 max-w-6xl mx-auto z-10">
         {items.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-cream rounded-3xl overflow-hidden border border-dark/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-2"
+            className="group relative bg-white/60 backdrop-blur-md rounded-[2rem] overflow-hidden border border-white/50 shadow-[0_15px_35px_rgba(44,30,22,0.06)] hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] transition-all duration-500 hover:-translate-y-3"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/40 via-transparent to-dark/5"></div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/60 via-transparent to-primary/5 z-0"></div>
 
-            <div className="absolute left-4 top-4 z-10 rounded-full bg-white/80 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-dark/70 shadow-[0_6px_14px_rgba(0,0,0,0.12)]">
+            <div className="absolute left-5 top-5 z-20 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary shadow-[0_8px_20px_rgba(44,30,22,0.15)]">
               {item.badge}
             </div>
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-72 sm:h-60 md:h-72 object-cover object-center transition duration-500 group-hover:scale-[1.04]"
-            />
 
-            <div className="p-5 sm:p-6 text-center relative">
-              <h4 className="font-heading text-lg sm:text-xl mb-2 transition duration-300 group-hover:translate-y-0.5">
+            <div className="relative overflow-hidden aspect-[4/3] bg-surface-dark/20 z-10 p-2">
+              <div className="w-full h-full rounded-[1.5rem] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/20 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-0"></div>
+              </div>
+            </div>
+
+            <div className="p-6 sm:p-8 text-center relative z-20">
+              <h4 className="font-heading text-xl sm:text-2xl mb-3 text-primary transition-colors duration-300">
                 {item.title}
               </h4>
-              <p className="text-gray-600 text-sm sm:text-[15px] mb-4 transition duration-300 group-hover:text-gray-700">
+              <p className="text-primary/60 text-sm sm:text-base mb-6 font-light leading-relaxed">
                 {item.description}
               </p>
 
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
+              <div className="flex flex-wrap justify-center gap-2 mb-8">
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-dark/10 bg-white/70 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-dark/70 transition duration-300 group-hover:border-dark/20"
+                    className="rounded-full border border-primary/10 bg-white/50 px-3.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-primary/70 transition-all duration-300 group-hover:border-primary/20 group-hover:bg-white/80"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                 <a
                   href={buildWhatsAppLink(item.title, item.image)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:flex-1 sm:max-w-[180px] h-11 items-center justify-center text-[13px] font-semibold tracking-[0.08em] uppercase text-white bg-dark rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.22)] transition duration-300"
+                  className="group/btn relative inline-flex w-full sm:flex-1 h-12 items-center justify-center overflow-hidden rounded-full bg-primary text-[12px] font-medium tracking-[0.1em] uppercase text-surface shadow-[0_10px_20px_rgba(44,30,22,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_25px_rgba(44,30,22,0.25)]"
                 >
-                  Place Order
+                  <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-150%)] group-hover/btn:duration-700 group-hover/btn:[transform:skew(-12deg)_translateX(150%)]">
+                    <div className="relative h-full w-6 bg-white/20"></div>
+                  </div>
+                  <span className="relative z-10">Order</span>
                 </a>
                 <a
                   href={`https://wa.me/+919913125551?text=${encodeURIComponent(
@@ -111,9 +124,8 @@ function MenuPreview() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative inline-flex w-full sm:flex-1 sm:max-w-[180px] h-11 items-center justify-center text-[13px] font-semibold tracking-[0.08em] uppercase text-dark rounded-full border border-dark/20 bg-white/70 backdrop-blur-sm shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition duration-300 hover:bg-dark hover:text-white hover:border-dark"
+                  className="relative inline-flex w-full sm:flex-1 h-12 items-center justify-center text-[12px] font-medium tracking-[0.1em] uppercase text-primary rounded-full border border-primary/20 bg-transparent transition-all duration-300 hover:bg-primary/5 hover:border-primary"
                 >
-                  <span className="absolute inset-[2px] rounded-full border border-gold/30"></span>
                   Customize
                 </a>
               </div>
