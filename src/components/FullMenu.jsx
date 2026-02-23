@@ -190,7 +190,7 @@ function FullMenu() {
   ];
 
   return (
-    <section id="menu" className="relative py-24 sm:py-32 bg-surface">
+    <section id="full-menu" className="relative py-32 sm:py-40 bg-surface">
       <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
@@ -199,47 +199,48 @@ function FullMenu() {
             <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
             Full Menu
           </span>
-          <h2 className="mt-6 font-heading text-4xl sm:text-5xl text-primary tracking-tight">
+          <h2 className="mt-8 font-heading text-4xl sm:text-5xl text-primary tracking-tight">
             Explore <span className="italic font-light">Our Menu</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-primary/70 font-light max-w-xl mx-auto">
+          <p className="mt-6 text-base sm:text-lg text-primary/70 font-light max-w-xl mx-auto">
             Freshly handcrafted desserts. Customisation available upon request.
           </p>
         </div>
 
         {menu.map((category) => (
-          <div key={category.title} className="mt-20 sm:mt-24">
+          <div key={category.title} className="mt-24 sm:mt-32">
             <div className="text-center" data-aos="fade-up">
               <h3 className="font-heading text-3xl sm:text-4xl text-primary font-medium">
                 {category.title}
               </h3>
-              <p className="mt-3 text-base text-primary/60 font-light">
+              <p className="mt-4 text-base text-primary/60 font-light">
                 {category.description}
               </p>
-              <div className="mx-auto mt-6 flex items-center justify-center gap-2">
+              <div className="mx-auto mt-8 flex items-center justify-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent/40"></span>
                 <div className="h-px w-16 bg-gradient-to-r from-accent/10 via-accent/60 to-accent/10"></div>
                 <span className="w-1.5 h-1.5 rounded-full bg-accent/40"></span>
               </div>
             </div>
 
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-10">
+            <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-14">
               {category.items.map((item) => (
                 <div
                   key={item.name}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 backdrop-blur-md shadow-[0_15px_35px_rgba(44,30,22,0.06)] transition-all duration-500 hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] hover:-translate-y-2 hover:bg-white/60"
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 backdrop-blur-md shadow-[0_15px_35px_rgba(44,30,22,0.06)] transition-all duration-700 hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] hover:-translate-y-3 hover:bg-white/60"
                   data-aos="fade-up"
                 >
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/40 via-transparent to-primary/5 z-0"></div>
 
                   {item.image ? (
                     <div className="relative overflow-hidden aspect-[4/5] bg-surface-dark/20 p-2 z-10">
-                      <div className="w-full h-full rounded-[1.5rem] overflow-hidden bg-primary/5">
+                      <div className="w-full h-full rounded-[1.5rem] overflow-hidden bg-primary/5 relative">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                          className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
                         />
+                        <div className="absolute inset-0 bg-primary/10 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-0"></div>
                       </div>
                     </div>
                   ) : (

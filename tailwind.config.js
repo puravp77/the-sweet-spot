@@ -50,7 +50,7 @@ export default {
           light: "#4A3628", // Coffee
         },
         surface: {
-          DEFAULT: "#FAECE1", // Cream/Almond background
+          DEFAULT: "#FFFFFF", // Pure white background
           light: "#FFFDF9", // Off-white
           dark: "#E8DED2", // Darker beige
         },

@@ -20,9 +20,10 @@ function Testimonials() {
   ];
 
   return (
-    <section className="relative py-24 sm:py-32 bg-surface overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent skew-x-12 opacity-50"></div>
+    <section id="testimonials" className="relative overflow-hidden py-32 sm:py-40 bg-surface">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[40rem] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="relative mx-auto max-w-6xl px-6 z-10">
         <div className="text-center" data-aos="fade-up">

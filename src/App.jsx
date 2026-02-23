@@ -11,6 +11,7 @@ import FullMenu from "./components/FullMenu";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import FloatingBackToTop from "./components/FloatingBackToTop";
 import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 
 function App() {
   useEffect(() => {
@@ -18,7 +19,8 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-surface min-h-screen text-primary font-body">
+    <div className="bg-surface min-h-screen text-primary font-body relative">
+      <Preloader />
       <Navbar />
       <Hero />
       <div className="h-px bg-primary/10"></div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import logo from "../assets/Logo.png";
+import Magnetic from "./Magnetic";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,24 +22,28 @@ function Navbar() {
         </span>
 
         <div className="hidden sm:flex items-center gap-6">
-          <a
-            href="https://www.instagram.com/__.thesweetspot._/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xl text-primary/80 hover:text-accent transition duration-300 hover:scale-110"
-          >
-            <FaInstagram />
-          </a>
+          <Magnetic>
+            <a
+              href="https://www.instagram.com/__.thesweetspot._/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl text-primary/80 hover:text-accent transition duration-300 hover:scale-110 flex items-center justify-center p-2"
+            >
+              <FaInstagram />
+            </a>
+          </Magnetic>
 
-          <a
-            href="https://wa.me/+919913125551"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative overflow-hidden border border-primary/20 bg-transparent px-6 py-2.5 rounded-full text-sm font-medium tracking-wide text-primary transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(44,30,22,0.1)]"
-          >
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-surface-light">Order Now</span>
-            <div className="absolute inset-0 h-full w-full translate-y-full bg-primary transition-transform duration-300 ease-out group-hover:translate-y-0 text-white"></div>
-          </a>
+          <Magnetic>
+            <a
+              href="https://wa.me/+919913125551"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden border border-primary/20 bg-transparent px-6 py-2.5 rounded-full text-sm font-medium tracking-wide text-primary transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(44,30,22,0.1)] inline-block"
+            >
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-surface-light">Order Now</span>
+              <div className="absolute inset-0 h-full w-full translate-y-full bg-primary transition-transform duration-300 ease-out group-hover:translate-y-0 text-white"></div>
+            </a>
+          </Magnetic>
         </div>
 
         <button
@@ -67,8 +72,8 @@ function Navbar() {
 
       <div
         className={`sm:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen
-            ? "max-h-56 opacity-100 mt-4"
-            : "max-h-0 opacity-0 mt-0"
+          ? "max-h-56 opacity-100 mt-4"
+          : "max-h-0 opacity-0 mt-0"
           }`}
       >
         <div className="rounded-2xl border border-primary/10 bg-white/90 backdrop-blur-lg px-5 py-5 shadow-xl transform transition-transform duration-500 origin-top">

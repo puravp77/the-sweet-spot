@@ -34,11 +34,11 @@ function MenuPreview() {
   ];
 
   return (
-    <section id="menu" className="relative bg-surface px-4 py-24 sm:px-6 sm:py-28 overflow-hidden">
+    <section id="menu" className="relative bg-surface px-4 py-32 sm:px-6 sm:py-40 overflow-hidden">
       {/* Background aesthetics */}
       <div className="absolute top-40 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
 
-      <div className="relative text-center mb-16 sm:mb-20">
+      <div className="relative text-center mb-20 sm:mb-24">
         <span
           className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/60 backdrop-blur-sm px-5 py-1.5 text-[11px] font-medium uppercase tracking-[0.25em] text-primary/80 shadow-sm"
           data-aos="fade-up"
@@ -47,7 +47,7 @@ function MenuPreview() {
           Curated Menu
         </span>
         <h3
-          className="mt-6 font-heading text-4xl sm:text-5xl md:text-5xl mb-4 sm:mb-6 text-primary tracking-tight"
+          className="mt-8 font-heading text-4xl sm:text-5xl md:text-5xl mb-6 text-primary tracking-tight"
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -62,26 +62,26 @@ function MenuPreview() {
         </p>
       </div>
 
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 max-w-6xl mx-auto z-10">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-14 max-w-6xl mx-auto z-10">
         {items.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white/60 backdrop-blur-md rounded-[2rem] overflow-hidden border border-white/50 shadow-[0_15px_35px_rgba(44,30,22,0.06)] hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] transition-all duration-500 hover:-translate-y-3"
+            className="group relative bg-white/60 backdrop-blur-md rounded-[2rem] overflow-hidden border border-white/50 shadow-[0_15px_35px_rgba(44,30,22,0.06)] hover:shadow-[0_25px_50px_rgba(44,30,22,0.12)] transition-all duration-700 hover:-translate-y-4"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/60 via-transparent to-primary/5 z-0"></div>
 
-            <div className="absolute left-5 top-5 z-20 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary shadow-[0_8px_20px_rgba(44,30,22,0.15)]">
+            <div className="absolute left-5 top-5 z-20 rounded-full bg-white/90 backdrop-blur-md px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary shadow-[0_8px_20px_rgba(44,30,22,0.15)] transition-transform duration-500 group-hover:scale-105">
               {item.badge}
             </div>
 
             <div className="relative overflow-hidden aspect-[4/3] bg-surface-dark/20 z-10 p-2">
-              <div className="w-full h-full rounded-[1.5rem] overflow-hidden">
+              <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+                  className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-0"></div>
               </div>
