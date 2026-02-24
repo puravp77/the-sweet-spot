@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import logo from "../assets/Logo.png";
+import logo from "../assets/favicon1.png";
 import Magnetic from "./Magnetic";
 
 function Navbar() {
