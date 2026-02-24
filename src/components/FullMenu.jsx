@@ -7,6 +7,11 @@ import cake3 from "../assets/Cake-3.jpg";
 import cake4 from "../assets/Cake-4.jpg";
 import cake5 from "../assets/Cake-5.jpg";
 import cake6 from "../assets/Cake-6.jpg";
+import strawberryCake from "../assets/cake1.jpg";
+import biscoffCheesecake from "../assets/cake2.jpg";
+import bakedCake from "../assets/AboutCake.jpg";
+import choco3d from "../assets/3D-cake.jpg";
+import browniesImg from "../assets/brownies.jpg";
 
 function FullMenu() {
   const [activeItem, setActiveItem] = useState(null);
@@ -120,36 +125,42 @@ function FullMenu() {
         {
           name: "Ferrero Rocher / Nutella",
           description: "Hazelnut-rich cake with Ferrero crunch.",
+          image: cake3,
           half: 800,
           one: 1400,
         },
         {
           name: "Hazelnut Praline",
           description: "Nutty praline cream with roasted hazelnuts.",
+          image: cake2,
           half: 900,
           one: 1600,
         },
         {
           name: "Chocolate Overloaded",
           description: "Extra chocolate layers with ganache drizzle.",
+          image: cake5,
           half: 800,
           one: 1400,
         },
         {
           name: "Strawberry",
           description: "Fresh strawberry cream with light vanilla sponge.",
+          image: strawberryCake,
           half: 800,
           one: 1400,
         },
         {
           name: "Choco Chips",
           description: "Chocolate chip sponge with creamy frosting.",
+          image: cake4,
           half: 750,
           one: 1300,
         },
         {
           name: "Hazelnut Crunchy",
           description: "Crunchy hazelnut bits with smooth chocolate.",
+          image: cake6,
           half: 800,
           one: 1400,
         },
@@ -162,42 +173,49 @@ function FullMenu() {
         {
           name: "Blueberry",
           description: "Creamy cheesecake topped with blueberry compote.",
+          image: choco3d,
           half: 1200,
           one: 2200,
         },
         {
           name: "Lotus Biscoff",
           description: "Biscoff crumb base with caramelized spread.",
+          image: biscoffCheesecake,
           half: 1300,
           one: 2400,
         },
         {
           name: "Nutella",
           description: "Velvety cheesecake with Nutella swirl.",
+          image: cake3,
           half: 1300,
           one: 2400,
         },
         {
           name: "Choco Truffle",
           description: "Chocolate cheesecake with truffle ganache.",
+          image: cake5,
           half: 1000,
           one: 1800,
         },
         {
           name: "Mango",
           description: "Tropical mango glaze over creamy cheesecake.",
+          image: bakedCake,
           half: 1400,
           one: 2600,
         },
         {
           name: "Strawberry",
           description: "Strawberry glaze with silky cream cheese.",
+          image: strawberryCake,
           half: 1400,
           one: 2600,
         },
         {
           name: "New York",
           description: "Classic baked cheesecake with rich creaminess.",
+          image: bakedCake,
           half: 900,
           one: 1600,
         },
@@ -210,16 +228,19 @@ function FullMenu() {
         {
           name: "Korean Cream Cheese Buns (2)",
           description: "Soft buns with a sweet cream cheese center.",
+          image: bakedCake,
           price: 300,
         },
         {
           name: "Donuts (6)",
           description: "Assorted donuts with smooth glazes.",
+          image: browniesImg,
           price: 480,
         },
         {
           name: "Bomboloni (6)",
           description: "Italian filled donuts dusted with sugar.",
+          image: browniesImg,
           price: 600,
         },
       ],

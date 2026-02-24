@@ -41,7 +41,7 @@ function Hero() {
       {/* Subtle Cake Background with GSAP Parallax */}
       <div
         ref={bgRef}
-        className="absolute inset-x-0 -top-[20%] h-[140%] bg-center bg-cover opacity-70 pointer-events-none"
+        className="absolute inset-x-0 -top-[35%] h-[140%] bg-center bg-cover opacity-100 pointer-events-none"
         style={{ backgroundImage: `url(${heroCake})` }}
       ></div>
 
@@ -100,18 +100,7 @@ function Hero() {
         </div>
 
         <div className="relative w-full md:w-[46%] hidden md:block">
-          {/* Animated decorative SVG */}
-          <div className="relative w-full aspect-square flex items-center justify-center">
-            <svg viewBox="0 0 200 200" className="w-full max-w-[400px]">
-              <path
-                className="animate-draw opacity-30"
-                d="M10,100 C10,40 40,10 100,10 C160,10 190,40 190,100 C190,160 160,190 100,190 C40,190 10,160 10,100"
-                fill="transparent"
-                stroke="#D4AF37"
-                strokeWidth="0.5"
-              />
-            </svg>
-          </div>
+          {/* Decorative element removed */}
         </div>
       </div>
     </section>
